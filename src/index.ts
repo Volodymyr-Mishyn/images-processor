@@ -1,5 +1,5 @@
 const minimist = require('minimist');
-import { ImageProcessor } from './image-processor';
+import { ImagesProcessor } from './images-processor';
 
 const defaultInputPath = './input'; // Replace with your input file path
 const defaultOutputPath = './output'; // Replace with your desired output file path
@@ -12,5 +12,5 @@ const inputPath = cliArgs.input || defaultInputPath;
 const outputPath = cliArgs.output || defaultOutputPath;
 const threshold = cliArgs.threshold || defaultThreshold;
 
-const imageProcessorApp = new ImageProcessor(inputPath, outputPath, threshold);
+const imageProcessorApp = new ImagesProcessor(inputPath, outputPath, threshold);
 imageProcessorApp.process();

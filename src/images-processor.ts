@@ -3,7 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 import { isOverLimitColor } from './limit-color-separation';
 
-export class ImageProcessor {
+export class ImagesProcessor {
   private _isOverLimitColor: (r: number, g: number, b: number) => boolean;
   constructor(
     private _inputDirectory: string,
