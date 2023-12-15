@@ -7,7 +7,7 @@ const defaultOutputPath = './output'; // Replace with your desired output file p
 const defaultThreshold = 20;
 
 const cliArgs = minimist(process.argv.slice(2));
-console.log(cliArgs);
+
 const inputPath = cliArgs.input || defaultInputPath;
 const outputPath = cliArgs.output || defaultOutputPath;
 const threshold = cliArgs.threshold || defaultThreshold;
