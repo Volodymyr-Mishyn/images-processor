@@ -4,7 +4,8 @@
   "description": "simple app to replace white color with transparent",
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "ts-node -P ./tsconfig.json ./src/index.ts --input=./input --output=./output",
+    "build": "tsc",
+    "dev": "ts-node -P ./tsconfig.json ./src/index.ts --input=./input --output=./output --threshold=100",
     "dev:reload": "nodemon"
   },
   "author": "Volodymyr Mishyn",

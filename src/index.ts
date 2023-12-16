@@ -4,7 +4,7 @@ import { ImagesProcessor } from './images-processor';
 const defaultInputPath = './input'; // Replace with your input file path
 const defaultOutputPath = './output'; // Replace with your desired output file path
 
-const defaultThreshold = 20;
+const defaultThreshold = 120;
 
 const cliArgs = minimist(process.argv.slice(2));
 

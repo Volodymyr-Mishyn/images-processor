@@ -13,7 +13,7 @@ export class ImagesProcessor {
     this._isOverLimitColor = isOverLimitColor(this._threshold);
   }
 
-  private checkIfOutputDirectoryExists() {
+  private _checkIfOutputDirectoryExists() {
     if (!fs.existsSync(this._outputDirectory)) {
       fs.mkdirSync(this._outputDirectory, { recursive: true });
     }
@@ -23,7 +23,7 @@ export class ImagesProcessor {
     const inputFile = path.join(this._inputDirectory, file);
     const outputFile = path.join(this._outputDirectory, file);
 
-    if (file.match(/\.(jpg|jpeg|png)$/i)) {
+    if (file.match(/\.(png)$/i)) {
       const { data, info } = await sharp(inputFile, { unlimited: true })
         .ensureAlpha()
         .raw()
@@ -52,7 +52,7 @@ export class ImagesProcessor {
 
   public async process(): Promise<void> {
     try {
-      this.checkIfOutputDirectoryExists();
+      this._checkIfOutputDirectoryExists();
       const files = fs.readdirSync(this._inputDirectory);
       for (const file of files) {
         this._processSingleImage(file);
